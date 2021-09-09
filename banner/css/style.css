@@ -553,6 +553,11 @@ h1 {
   display: none;
 }
 
+.graph.free-414,
+.graph.pro-414 {
+  display: none;
+}
+
 .graph.pro-320 {
   height: 104px;
 }
@@ -915,17 +920,6 @@ h1 {
   .graph.pro-320 {
     display: none;
   }
-}
-
-@media (min-width: 375px) and (max-width: 413px) {
-  .preview {
-    height: 419px;
-  }
-
-  .preview-header {
-    height: 140px;
-    padding: 62px 0 0 0px;
-  }
 
   h1 {
     font-size: 34px;
@@ -936,6 +930,186 @@ h1 {
   .close {
     top: 48px;
     right: 14px;
+  }
+
+  .slider {
+    height: 145px;
+  }
+
+  .slider-item {
+    padding: 20px;
+  }
+
+  .slider-item p {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .slider-item-header {
+    margin-bottom: 9px;
+  }
+
+  .rating {
+    margin-bottom: 13px;
+  }
+
+  .rating svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .options {
+    margin-bottom: 20px;
+  }
+
+  .option-item .option-item-header {
+    height: 25px;
+  }
+
+  .option-item .option-item-header p {
+    font-size: 13px;
+  }
+
+  .option-item .option-item-content p:nth-child(1) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .option-item .option-item-content p:nth-child(2) {
+    font-size: 15px;
+    line-height: 17.5px;
+  }
+
+  .option-item .option-item-content p:nth-child(3) {
+    margin-bottom: 8px;
+  }
+
+  .option-item .option-item-content p:nth-child(3),
+  .option-item .option-item-content p:nth-child(4) {
+    font-size: 13px;
+    line-height: 15.5px;
+  }
+
+  .option-item .option-item-footer {
+    height: 16px;
+  }
+
+  .footer {
+    position: relative;
+  }
+
+  .footer::after {
+    content: "";
+    display: block;
+    width: 134px;
+    height: 5px;
+    background-color: #000000;
+    border-radius: 3px;
+    position: absolute;
+    bottom: -31px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
+@media (min-width: 414px) {
+  .preview {
+    height: 471px;
+  }
+
+  .preview-header {
+    height: 154px;
+    padding: 50px 0 0 0px;
+  }
+
+  .graph.free-414,
+  .graph.pro-414 {
+    display: block;
+    left: 0px;
+  }
+
+  .graph {
+    top: 154px;
+  }
+
+  .graph.free-414 {
+    width: 414px;
+    height: 76px;
+  }
+
+  .graph.pro-414 {
+    width: 419px;
+    height: 179px;
+  }
+
+  .graph-icon-free {
+    top: 185px;
+    right: 14px;
+  }
+
+  .graph-icon-pro {
+    bottom: 143px;
+    right: 14px;
+  }
+
+  .preview-img {
+    width: 198px;
+    height: 255px;
+    top: 28%;
+    left: 40%;
+  }
+
+  .progress-list li {
+    height: 50px;
+    padding: 0 0 2px 33px;
+  }
+
+  .slider {
+    margin-top: -78px;
+    height: 145px;
+    margin-bottom: 30px;
+  }
+
+  .slider-item {
+    width: 374px;
+  }
+
+  .options-container {
+    margin-bottom: 28px;
+  }
+
+  .option-item {
+    width: 118px;
+    height: 176px;
+  }
+
+  .option-item .option-item-content {
+    height: 135px;
+  }
+
+  .option-item .option-item-content p:nth-child(2) {
+    margin-bottom: 12px;
+  }
+
+  .option-item:nth-child(1) {
+    height: 151px;
+  }
+
+  .continue {
+    width: 374px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 413px) {
+  .preview {
+    height: 419px;
+  }
+
+  .preview-header {
+    height: 140px;
+    padding: 62px 0 0 0px;
   }
 
   .graph.free-375,
@@ -988,30 +1162,6 @@ h1 {
 
   .slider-item {
     width: 335px;
-    height: 145px;
-    padding: 20px;
-  }
-
-  .slider-item p {
-    font-size: 15px;
-    line-height: 18px;
-  }
-
-  .slider-item-header {
-    margin-bottom: 9px;
-  }
-
-  .rating {
-    margin-bottom: 13px;
-  }
-
-  .rating svg {
-    width: 21px;
-    height: 21px;
-  }
-
-  .options {
-    margin-bottom: 20px;
   }
 
   .options-container {
@@ -1021,10 +1171,6 @@ h1 {
   .option-item {
     width: 105px;
     height: 156px;
-  }
-
-  .option-item .option-item-header {
-    height: 25px;
   }
 
   .option-item .option-item-content {
@@ -1051,34 +1197,11 @@ h1 {
     line-height: 15.5px;
   }
 
-  .option-item .option-item-footer {
-    height: 16px;
-  }
-
   .option-item:nth-child(1) {
     height: 131px;
   }
 
   .continue {
     width: 335px;
-  }
-
-  .footer {
-    position: relative;
-  }
-
-  .footer::after {
-    content: "";
-    display: block;
-    width: 134px;
-    height: 5px;
-    background-color: #000000;
-    border-radius: 3px;
-    position: absolute;
-    bottom: -31px;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-        -ms-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
   }
 }
