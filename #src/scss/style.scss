@@ -12,6 +12,7 @@ $gradient: linear-gradient(225deg, #894AC9 0%, #4D46B1 100%);
 
 body {
   background-color: #ffffff;
+  font-family: "SFProText", sans-serif;
 }
 
 li {
@@ -91,7 +92,6 @@ h1 {
     display: flex;
     justify-content: start;
     align-items: center;
-    font-family: "SFProText", sans-serif;
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 0.5px;
@@ -249,6 +249,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: 2.5s ease-in-out;
 }
 
 .slider-item {
@@ -263,7 +264,6 @@ h1 {
     font-size: 13px;
     line-height: 16px;
     color: #1a1a1a;
-    font-family: "SFProText", sans-serif;
     font-weight: 500;
 
     span {
@@ -293,7 +293,6 @@ h1 {
     font-size: 15px;
     line-height: 18px;
     color: #1a1a1a;
-    font-family: "SFProText", sans-serif;
   }
 
   h4 {
@@ -303,6 +302,27 @@ h1 {
   }
 
 }
+
+.to-left {
+  animation-name: left;
+}
+
+@media (max-width: 374px) {
+
+  @keyframes left {
+
+    from {
+      left: 50%;
+    }
+    to {
+      left: -39%;
+    }
+
+  }
+  
+}
+
+
 
 .rating {
   margin-bottom: 6px;
@@ -345,7 +365,6 @@ h1 {
   
   p {
     color: #1a1a1a;
-    font-family: "SFProText", sans-serif;
     text-align: center;
   }
 
@@ -434,7 +453,6 @@ h1 {
   background: linear-gradient(225deg, #542285 0%, #222266 100%);
   font-size: 22px;
   line-height: 28px;
-  font-family: "SFProText", sans-serif;
 }
 
 .footer {
@@ -443,7 +461,6 @@ h1 {
   justify-content: center;
 
   p {
-    font-family: "SFProText", sans-serif;
     font-size: 11px;
     line-height: 15px;
     color: #7d7d80;
@@ -525,6 +542,17 @@ h1 {
 
   .slider-item {
     width: 335px;
+  }
+
+  @keyframes left {
+
+    from {
+      left: 50%;
+    }
+    to {
+      left: -40.5%;
+    }
+
   }
 
   .options-container {
@@ -741,6 +769,18 @@ h1 {
 
   .slider-item {
     width: 374px;
+    height: 145px;
+  }
+
+  @keyframes left {
+
+    from {
+      left: 50%;
+    }
+    to {
+      left: -41.5%;
+    }
+
   }
 
   .options-container {
