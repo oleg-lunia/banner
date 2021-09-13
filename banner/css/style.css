@@ -400,9 +400,13 @@ template {
           box-sizing: border-box;
 }
 
-body {
+.body {
   background-color: #ffffff;
   font-family: "SFProText", sans-serif;
+}
+
+.body.dark {
+  background-color: #000000;
 }
 
 li {
@@ -458,6 +462,32 @@ h1 {
   right: 10px;
   background-color: rgba(255, 255, 255, 0.527344);
   cursor: pointer;
+}
+
+.switch {
+  position: absolute;
+  top: 48px;
+  left: 10px;
+  width: 50px;
+  height: 32px;
+  border-radius: 16px;
+  text-transform: lowercase;
+  background-color: rgba(255, 255, 255, 0.527344);
+  font-family: "SFProText", sans-serif;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.switch.dark {
+  color: #222266;
 }
 
 .close::before,
@@ -644,6 +674,7 @@ h1 {
 .graph-icon-free {
   top: 88px;
   right: 20px;
+  display: none;
 }
 
 .graph-icon-free .graph-icon-point {
@@ -653,6 +684,7 @@ h1 {
 .graph-icon-pro {
   bottom: 77px;
   right: 21px;
+  display: none;
 }
 
 .graph-icon-pro .graph-icon-point {
@@ -683,10 +715,8 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-animation: 1s ease-in-out;
-          animation: 1s ease-in-out;
-  -ms-touch-action: none;
-      touch-action: none;
+  -webkit-animation: 0.5s ease-in-out;
+          animation: 0.5s ease-in-out;
 }
 
 .slider-item {
@@ -742,6 +772,19 @@ h1 {
   mix-blend-mode: normal;
   opacity: 0.5;
   font-weight: 500;
+}
+
+.slider-item.dark {
+  background: -o-linear-gradient(225deg, #262526 0%, #19181A 100%);
+  background: linear-gradient(225deg, #262526 0%, #19181A 100%);
+}
+
+.slider-item.dark p {
+  color: #ffffff;
+}
+
+.slider-item-header.dark h3 {
+  color: #ffffff;
 }
 
 .to-left {
@@ -804,6 +847,7 @@ h1 {
   overflow: hidden;
   border-radius: 5px;
   background-color: #f3f2f9;
+  cursor: pointer;
 }
 
 .option-item p {
@@ -888,6 +932,25 @@ h1 {
 
 .option-item:nth-child(1) {
   height: 112px;
+}
+
+.option-item.active,
+.option-item.active.dark {
+  background: -o-linear-gradient(225deg, #894ac9 0%, #4d46b1 100%);
+  background: linear-gradient(225deg, #894ac9 0%, #4d46b1 100%);
+}
+
+.option-item.active .option-item-content p,
+.option-item.active.dark .option-item-content p {
+  color: #ffffff;
+}
+
+.option-item.dark {
+  background: #373640;
+}
+
+.option-item.dark .option-item-content p {
+  color: #ffffff;
 }
 
 .continue {
