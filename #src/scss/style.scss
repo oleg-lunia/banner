@@ -278,6 +278,7 @@ h1 {
   align-items: center;
   justify-content: center;
   animation: 0.5s ease-in-out;
+  touch-action: none;
 }
 
 .slider-item {
@@ -287,6 +288,7 @@ h1 {
   backdrop-filter: blur(9.06094px);
   border-radius: 10px;
   padding: 15px;
+  touch-action: none;
 
   p {
     font-size: 13px;

@@ -717,6 +717,8 @@ h1 {
           justify-content: center;
   -webkit-animation: 0.5s ease-in-out;
           animation: 0.5s ease-in-out;
+  -ms-touch-action: none;
+      touch-action: none;
 }
 
 .slider-item {
@@ -727,6 +729,8 @@ h1 {
           backdrop-filter: blur(9.06094px);
   border-radius: 10px;
   padding: 15px;
+  -ms-touch-action: none;
+      touch-action: none;
 }
 
 .slider-item p {

@@ -19,6 +19,8 @@ function showSlides() {
 
 }
 
+sliderContainer.ondragstart = () => false
+
 setInterval(showSlides, 5000);
 
 let indexPageX;
