@@ -10,9 +10,13 @@ $gradient: linear-gradient(225deg, #894AC9 0%, #4D46B1 100%);
   box-sizing: border-box;
 }
 
-body {
+.body {
   background-color: #ffffff;
   font-family: "SFProText", sans-serif;
+}
+
+.body.dark {
+  background-color: #000000;
 }
 
 li {
@@ -35,6 +39,8 @@ button {
   position: relative;
   overflow: hidden;
 }
+
+
 
 .preview-header {
   height: 88px;
@@ -61,6 +67,26 @@ h1 {
   right: 10px;
   background-color: rgba(255, 255, 255, 0.527344);
   cursor: pointer;
+}
+
+.switch {
+  position: absolute;
+  top: 48px;
+  left: 10px;
+  width: 50px;
+  height: 32px;
+  border-radius: 16px;
+  text-transform: lowercase;
+  background-color: rgba(255, 255, 255, 0.527344);
+  font-family: "SFProText", sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switch.dark {
+  color: #222266;
 }
 
 .close::before,
@@ -216,6 +242,7 @@ h1 {
 .graph-icon-free {
   top: 88px;
   right: 20px;
+  display: none;
 
   .graph-icon-point {
     background-color: #ee304e;
@@ -226,6 +253,7 @@ h1 {
 .graph-icon-pro {
   bottom: 77px;
   right: 21px;
+  display: none;
 
   .graph-icon-point {
     background-color: #04cd00;
@@ -249,8 +277,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: 1s ease-in-out;
-  touch-action: none;
+  animation: 0.5s ease-in-out;
 }
 
 .slider-item {
@@ -300,6 +327,23 @@ h1 {
     mix-blend-mode: normal;
     opacity: 0.5;
     font-weight: 500;
+  }
+
+}
+
+.slider-item.dark {
+  background: linear-gradient(225deg, #262526 0%, #19181A 100%);
+
+  p {
+    color: #ffffff;
+  }
+
+}
+
+.slider-item-header.dark {
+
+  h3 {
+    color: #ffffff;
   }
 
 }
@@ -363,6 +407,7 @@ h1 {
   overflow: hidden;
   border-radius: 5px;
   background-color: #f3f2f9;
+  cursor: pointer;
   
   p {
     color: #1a1a1a;
@@ -444,6 +489,35 @@ h1 {
 
 .option-item:nth-child(1) {
   height: 112px;
+}
+
+.option-item.active,
+.option-item.active.dark {
+  background: linear-gradient(225deg, #894ac9 0%, #4d46b1 100%);
+  
+  .option-item-content {
+    
+    p {
+      color: #ffffff;
+    }
+
+  }
+
+}
+
+
+
+.option-item.dark {
+  background: rgba(55, 54, 64, 1);
+
+  .option-item-content {
+    
+    p {
+      color: #ffffff;
+    }
+
+  }
+
 }
 
 .continue {

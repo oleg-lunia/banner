@@ -1,79 +1,77 @@
 let sliderItem = document.querySelectorAll('.slider-item');
 let sliderContainer = document.querySelector('.slider-container');
-let isEnabledTest = true;
-let isEnabled = true;
-let i = 0;
+let fuseAuto = true;
+let fuse = true;
+let fuse2 = true;
+let arr;
 
 function showSlides() {
-	if(isEnabledTest === true) {
-		isEnabledTest = false;
+	if(fuseAuto === true) {
+		fuseAuto = false;
 		sliderContainer.classList.add('to-left');
-
+    arr = document.querySelector('.slider-item');
 		sliderContainer.addEventListener('animationend', function() {
-			this.append(sliderItem[i]);
+			this.append(arr);
 			this.classList.remove('to-left');
-			isEnabledTest = true;
+			fuseAuto = true;
 		});
-	
-		i++;
-	
-		if(i == sliderItem.length) {
-			i = 0;
-		}
 	}
 
 }
 
 setInterval(showSlides, 5000);
 
-let x;
-let a;
-let b = [];
+let indexPageX;
+let indexPageX2;
+let arrSlides = [];
 
-let s = function (event) {
-	sliderContainer.style.left = `calc(50% - ${x - event.pageX}px)`;
-	a = event.pageX;
+let trackCursor = function (event) {
+	sliderContainer.style.left = `calc(50% - ${indexPageX - event.pageX}px)`;
+	indexPageX2 = event.pageX;
 }
 
-function delTransition() {
+function swipeLeft() {
 	sliderContainer.style.transition = '0s';
-	b = document.querySelectorAll('.slider-item');
+	arrSlides = document.querySelectorAll('.slider-item');
 	sliderContainer.style.left = '50%'
-	sliderContainer.append(b[0]);
-	isEnabledTest = true;
-	isEnabled = true;
+	sliderContainer.append(arrSlides[0]);
+	fuse = true;
+	fuse2 = true;
+	setTimeout(function() {fuseAuto = true}, 5000);
 }
 
-function rigth() {
+function swipeRigth() {
 	sliderContainer.style.transition = '0s';
-	b = document.querySelectorAll('.slider-item');
+	arrSlides = document.querySelectorAll('.slider-item');
 	sliderContainer.style.left = '50%'
-	sliderContainer.prepend(b[b.length - 1]);
-	isEnabledTest = true;
-	isEnabled = true;
+	sliderContainer.prepend(arrSlides[arrSlides.length - 1]);
+	fuse = true;
+	fuse2 = true;
+	setTimeout(function() {fuseAuto = true}, 5000);
 }
 
 function swipeSlider() {
 
 	sliderContainer.addEventListener('pointerdown', (event) => {
-		if(isEnabledTest === true) {
-			isEnabledTest = false;
-			x = event.pageX;
-			sliderContainer.addEventListener('pointermove', s);
+		if(fuse === true) {
+			fuse = false;
+			fuseAuto = false;
+			indexPageX = event.pageX;
+			sliderContainer.addEventListener('pointermove', trackCursor);
 		}
 	});
 
 	sliderContainer.addEventListener('pointerup', () => {
-		if(isEnabled === true) {
-			isEnabled = false;
-			sliderContainer.removeEventListener('pointermove', s);
-			sliderContainer.style.transition = '1s';
-			if(a < x) {
+		if(fuse2 === true) {
+			fuse2 = false;
+			sliderContainer.removeEventListener('pointermove', trackCursor);
+			sliderContainer.style.transition = '0.5s';
+			if(indexPageX2 < indexPageX) {
 				sliderContainer.style.left = `calc(50% - ${sliderItem[0].offsetWidth + 5}px)`;
-				setTimeout(delTransition, 2000);
-			} else if(a > x) {
+				setTimeout(swipeLeft, 500);
+			} else if(indexPageX2 > indexPageX) {
 				sliderContainer.style.left = `calc(50% + ${sliderItem[0].offsetWidth + 5}px)`;
-				setTimeout(rigth, 2000);
+				setTimeout(swipeRigth, 500);
 			}
 			
 		}
@@ -81,5 +79,74 @@ function swipeSlider() {
 	});
 }
 
-
 swipeSlider();
+
+let optionItems = document.querySelectorAll('.option-item');
+const CONTINUE = document.querySelector('.continue');
+let arrUrl = ['https://www.google.com/search?q=1', 'https://www.google.com/search?q=2', 'https://www.google.com/search?q=3'];
+let indexUrl;
+
+for (let i = 0; i < optionItems.length; i++) {
+	let optionItem = optionItems[i];
+	optionItem.addEventListener('click', () => {
+		for (let j = 0; j < optionItems.length; j++) {
+			optionItems[j].classList.remove('active');
+		}
+		optionItem.classList.add('active');
+		indexUrl = i;
+	})
+}
+
+CONTINUE.addEventListener('click', () => {
+	console.log(indexUrl)
+	if(indexUrl === 0 || indexUrl === 1 || indexUrl === 2) {
+		window.open(arrUrl[indexUrl], '_blank');
+	} else {
+		window.open(arrUrl[1], '_blank');
+	}
+});
+
+let switchCondition = document.querySelector('.switch');
+let body = document.querySelector('.body');
+let sliderHeader = document.querySelectorAll('.slider-item-header');
+let switchIndex = true;
+
+switchCondition.addEventListener('click', ()=> {
+	if(switchIndex === true) {
+		for(let i = 0; i < sliderItem.length; i++) {
+			sliderItem[i].classList.add('dark');
+		}
+		body.classList.add('dark');
+		for(let i = 0; i < optionItems.length; i++) {
+			optionItems[i].classList.add('dark');
+		}
+		for(let i = 0; i < sliderHeader.length; i++) {
+			sliderHeader[i].classList.add('dark');
+		}
+		switchCondition.classList.add('dark');
+		switchIndex = false;
+	} else {
+		for(let i = 0; i < sliderItem.length; i++) {
+			sliderItem[i].classList.remove('dark');
+		}
+		body.classList.remove('dark');
+		for(let i = 0; i < optionItems.length; i++) {
+			optionItems[i].classList.remove('dark');
+		}
+		for(let i = 0; i < sliderHeader.length; i++) {
+			sliderHeader[i].classList.remove('dark');
+		}
+		switchCondition.classList.remove('dark');
+		switchIndex = true;
+	}
+});
+
+let graphIconFree = document.querySelector('.graph-icon-free');
+let graphIconPro = document.querySelector('.graph-icon-pro');
+
+function showGraphIcon () {
+	graphIconFree.style.display = 'flex';
+	graphIconPro.style.display = 'flex';
+}
+
+setTimeout(showGraphIcon, 1700);
