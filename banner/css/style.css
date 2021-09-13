@@ -683,8 +683,8 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-animation: 2.5s ease-in-out;
-          animation: 2.5s ease-in-out;
+  -webkit-animation: 1s ease-in-out;
+          animation: 1s ease-in-out;
 }
 
 .slider-item {
@@ -1206,6 +1206,7 @@ h1 {
 
   .slider-item {
     width: 335px;
+    height: 145px;
   }
 
 @-webkit-keyframes left {

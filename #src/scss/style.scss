@@ -249,7 +249,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: 2.5s ease-in-out;
+  animation: 1s ease-in-out;
 }
 
 .slider-item {
@@ -542,6 +542,7 @@ h1 {
 
   .slider-item {
     width: 335px;
+    height: 145px;
   }
 
   @keyframes left {
