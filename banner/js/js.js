@@ -55,18 +55,18 @@ function rigth() {
 
 function swipeSlider() {
 
-	sliderContainer.addEventListener('mousedown', (event) => {
+	sliderContainer.addEventListener('pointerdown', (event) => {
 		if(isEnabledTest === true) {
 			isEnabledTest = false;
 			x = event.pageX;
-			sliderContainer.addEventListener('mousemove', s);
+			sliderContainer.addEventListener('pointermove', s);
 		}
 	});
 
-	sliderContainer.addEventListener('mouseup', () => {
+	sliderContainer.addEventListener('pointerup', () => {
 		if(isEnabled === true) {
 			isEnabled = false;
-			sliderContainer.removeEventListener('mousemove', s);
+			sliderContainer.removeEventListener('pointermove', s);
 			sliderContainer.style.transition = '1s';
 			if(a < x) {
 				sliderContainer.style.left = `calc(50% - ${sliderItem[0].offsetWidth + 5}px)`;

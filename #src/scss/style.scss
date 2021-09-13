@@ -250,6 +250,7 @@ h1 {
   align-items: center;
   justify-content: center;
   animation: 1s ease-in-out;
+  touch-action: none;
 }
 
 .slider-item {
