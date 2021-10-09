@@ -40,7 +40,11 @@ button {
   overflow: hidden;
 }
 
-
+.preview-container,
+.slider {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
 
 .preview-header {
   height: 88px;
