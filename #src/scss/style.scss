@@ -36,8 +36,11 @@ button {
 .preview {
   height: 262px;
   background: $gradient;
-  position: relative;
   overflow: hidden;
+}
+
+.preview-container {
+  position: relative;
 }
 
 .preview-container,
@@ -561,7 +564,8 @@ h1 {
 
 @media (min-width: 375px) and (max-width: 413px) {
 
-  .preview {
+  .preview,
+  .preview-container {
     height: 419px;
   }
 
@@ -789,7 +793,8 @@ h1 {
 
 @media (min-width: 414px) {
 
-  .preview {
+  .preview,
+  .preview-container {
     height: 471px;
   }
 
