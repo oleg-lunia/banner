@@ -783,7 +783,8 @@ h1 {
   background: linear-gradient(225deg, #262526 0%, #19181A 100%);
 }
 
-.slider-item.dark p {
+.slider-item.dark p,
+.slider-item.dark h4 {
   color: #ffffff;
 }
 
