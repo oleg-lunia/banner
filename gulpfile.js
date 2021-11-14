@@ -4,6 +4,7 @@ let source_folder = '#src';
 
 let path = {
 	build: {
+		data: project_folder + '/data/',
 		html: project_folder + '/',
 		css: project_folder + '/css/',
 		js: project_folder + '/js/',
@@ -11,6 +12,7 @@ let path = {
 		fonts: project_folder + '/fonts/',
 	},
 	src: {
+		data: source_folder + '/data/*.json',
 		html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
 		css: source_folder + '/scss/{style.scss,404.scss,map.scss,pandas.scss,}',
 		js: source_folder + '/js/*.js',
@@ -18,6 +20,7 @@ let path = {
 		fonts: source_folder + '/fonts/*.{ttf,otf,woff,woff2}',
 	},
 	watch: {
+		data: source_folder + '/data/*.json',
 		html: source_folder + '/**/*.html',
 		css: source_folder + '/scss/**/*.scss',
 		js: source_folder + '/js/**/*.js',
@@ -118,11 +121,17 @@ function watchFiles(params) {
 	gulp.watch([path.watch.media], images);
 }
 
+function data() {
+	return src(path.src.data)
+		.pipe(dest(path.build.data))
+		.pipe(browsersync.stream())
+}
+
 function clean(params) {
 	return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts));
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, data));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.fonts = fonts;

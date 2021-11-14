@@ -460,6 +460,7 @@ h1 {
   font-size: 24px;
   line-height: 41px;
   letter-spacing: 0.26px;
+  text-align: center;
 }
 
 .close {
@@ -473,13 +474,9 @@ h1 {
   cursor: pointer;
 }
 
+.btn-lang,
 .switch {
   position: absolute;
-  top: 48px;
-  left: 10px;
-  width: 50px;
-  height: 32px;
-  border-radius: 16px;
   text-transform: lowercase;
   background-color: rgba(255, 255, 255, 0.527344);
   font-family: "SFProText", sans-serif;
@@ -493,10 +490,27 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border-radius: 16px;
 }
 
-.switch.dark {
+.switch {
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 32px;
+}
+
+.switch.dark,
+.btn-lang.dark {
   color: #222266;
+}
+
+.btn-lang {
+  position: absolute;
+  top: 10px;
+  left: 70px;
+  width: 32px;
+  height: 32px;
 }
 
 .close::before,
@@ -626,7 +640,7 @@ h1 {
 .graph-icon-free .graph-icon-header,
 .graph-icon-pro .graph-icon-header {
   position: relative;
-  width: 51px;
+  min-width: 51px;
   height: 24px;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 2px 4px 0px rgba(90, 0, 124, 0.2583);
@@ -819,6 +833,10 @@ h1 {
   fill: #fcbf59;
 }
 
+.rating.dark {
+  color: #201f20;
+}
+
 .options {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -895,7 +913,7 @@ h1 {
 
 .option-item .option-item-header p {
   font-size: 11px;
-  line-height: 15px;
+  line-height: 11px;
   letter-spacing: 0.66px;
 }
 
@@ -933,6 +951,9 @@ h1 {
   font-size: 11px;
   line-height: 13px;
   margin-bottom: 3px;
+  margin: 0 auto;
+  max-width: 57px;
+  margin-bottom: 8px;
 }
 
 .option-item .option-item-content p:nth-child(4) {
