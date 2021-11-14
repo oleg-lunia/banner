@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>banner</title>
+</head>
+
+<body class="body">
+  <div class="app">
+  </div>
+  <button class="btn-lang" value="en">en</button>
+
+  <script id="entry-template" type="text/x-handlebars-template">
+    <section class="preview">
+      {{#each preview}}
+        <div class="preview-container">
+          <div class="preview-header">
+            <h1>{{title}}</h1>
+            <button class="close"></button>
+            <button class="switch">{{switch}}</button>
+          </div>
+          <ul class="progress-list">
+            {{#each progress-list}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+          <picture>
+            <source srcset="{{source}}" type="image/webp">
+            <img class="preview-img" srcset="{{img-srcset}}" src="{{img}}"
+              alt="Bitmap">
+          </picture>
+          {{{svg-pro-320}}}
+          {{{svg-pro-375}}}
+          {{{svg-pro-414}}}
+          {{{svg-free-320}}}
+          {{{svg-free-375}}}
+          {{{svg-free-414}}}
+          <div class="graph-icon-free">
+            <div class="graph-icon-header">
+              {{#each graph-icon-free}}
+                <h4>{{title}}</h4>
+                {{{svg}}}
+              {{/each}}
+            </div>
+            <div class="graph-icon-point"></div>
+          </div>
+          <div class="graph-icon-pro">
+            <div class="graph-icon-header">
+              {{#each graph-icon-pro}}
+                <h4>{{title}}</h4>
+                {{{svg}}}
+              {{/each}}
+            </div>
+            <div class="graph-icon-point"></div>
+          </div>
+        </div>
+      {{/each}}
+    </section>
+    <section class="slider">
+      <div class="slider-container">
+        {{#each slides}}
+          <div class="slider-item {{item}}">
+            <div class="slider-item-header">
+              <h3>{{title}}</h3>
+              <h4>{{title-name}}</h4>
+            </div>
+            <div class="rating">
+              {{{rating}}}
+            </div>
+            <p>{{review}}</p>
+          </div>
+        {{/each}} 
+      </div>
+    </section>
+    <section class="options">
+      <div class="options-container">
+        {{#each options}}
+          <div class="option-item">
+            {{#if header}}
+              <div class="option-item-header">
+                <p>{{title}}</p>
+              </div>
+            {{/if}}
+            <div class="option-item-content">
+              <p>{{nam-months}}</p>
+              <p>{{period}}</p>
+              <p>{{price}}</p>
+              <p>{{price-in-month}}</p>
+            </div>
+            {{#if footer}}
+              <div class="option-item-footer">
+                <p>{{footer-cont}}</p>
+              </div>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+      {{#each btn-con}}
+        <button class="continue">{{content}}</button>
+      {{/each}}
+    </section>
+    <section class="footer">
+      {{#each footer}}
+        <p>{{content}}</p>
+      {{/each}}
+    </section>
+  </script>
+  <script src="./js/handlebars-v4.7.7.js"></script>
+  <script src="./js/js.js"></script>
+</body>
+
+</html>
