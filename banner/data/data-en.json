@@ -15,8 +15,10 @@
       "svg-free-375": "<svg class='graph free-375' viewBox='0 0 375 71'> <path stroke-linecap='round' stroke-linejoin='round' fill='none' stroke='#ffffff' stroke-dasharray='400' stroke-dashoffset='0' stroke-width='3' d='M-13 1.00649C-13 1.00649 54.7328 -0.948561 97.7457 8.63546C140.758 18.2195 157.055 29.7054 207.789 39.2894C265.199 47.8085 331.915 69.5 378 69.5'> <animate attributeName='stroke-dashoffset' values='400; 0' dur='2s' repeatCount='1' fill='freeze' calcMode='linear'/> </path> </svg>",
       "svg-free-414": "<svg class='graph free-414' viewBox='0 0 414 76'> <path stroke-linecap='round' stroke-linejoin='round' fill='none' stroke='#ffffff' stroke-dasharray='450' stroke-dashoffset='0' stroke-width='3' d='M0 1.19849C0 1.19849 71.7171 -0.870109 117.26 9.27057C162.803 19.4112 180.059 31.5642 233.777 41.7049C294.563 50.7188 365.204 73.6702 414 73.6702'> <animate attributeName='stroke-dashoffset' values='450; 0' dur='2s' repeatCount='1' fill='freeze' calcMode='linear'/> </path> </svg>",
       "graph-icon-free": [
-        {"title": "Free"},
-        {"svg": "<svg viewBox='0 0 10 12'> <path fill-rule='evenodd' clip-rule='evenodd' d='M5.88311 11.4697C5.49259 11.8602 4.85942 11.8602 4.4689 11.4697L1.29292 8.29368C0.669488 7.67025 1.09931 6.6037 1.98082 6.58676L3.19753 6.56338V1C3.19753 0.447716 3.64524 1.04308e-06 4.19753 1.04308e-06H6.31536C6.86764 1.04308e-06 7.31536 0.447715 7.31536 1V6.48424L8.45724 6.46229C9.35727 6.445 9.8201 7.53268 9.18356 8.16921L5.88311 11.4697Z' fill='#ee304e' /> </svg>"}
+        {
+          "title": "Free",
+          "svg": "<svg viewBox='0 0 10 12'> <path fill-rule='evenodd' clip-rule='evenodd' d='M5.88311 11.4697C5.49259 11.8602 4.85942 11.8602 4.4689 11.4697L1.29292 8.29368C0.669488 7.67025 1.09931 6.6037 1.98082 6.58676L3.19753 6.56338V1C3.19753 0.447716 3.64524 1.04308e-06 4.19753 1.04308e-06H6.31536C6.86764 1.04308e-06 7.31536 0.447715 7.31536 1V6.48424L8.45724 6.46229C9.35727 6.445 9.8201 7.53268 9.18356 8.16921L5.88311 11.4697Z' fill='#ee304e' /> </svg>"
+        }
       ],
       "graph-icon-pro": [
         {
